@@ -1,0 +1,433 @@
+{
+  "formato": "9:16",
+  "estilo": "menta",
+  "voz": "voz",
+  "cola": 1.4,
+  "personajes": {
+    "presentadora": {
+      "forma": "humano",
+      "peinado": "largo",
+      "pelo": "#6B3A1E",
+      "piel": "#F3CDB0",
+      "camiseta": "#2FA37A",
+      "pantalon": "#24415F",
+      "zapatillas": "#24415F",
+      "chip": false
+    },
+    "sol": {
+      "forma": "circulo",
+      "color": "#FFC83D",
+      "color2": "#FF9F1C",
+      "rayos": true,
+      "cara": "feliz"
+    },
+    "gota": {
+      "forma": "gota_agua",
+      "color": "#7FC8FF",
+      "cara": "feliz"
+    },
+    "nube": {
+      "forma": "nube",
+      "color": "#FFFFFF",
+      "cara": "neutro"
+    }
+  },
+  "mundos": {
+    "ciclo": {
+      "fondo": "mar",
+      "particulas": [
+        {
+          "tipo": "lluvia",
+          "n": 45,
+          "aparece": "caen"
+        }
+      ],
+      "actores": [
+        {
+          "id": "sol",
+          "personaje": "sol",
+          "pos": [
+            0.84,
+            0.18
+          ],
+          "tam": 0.24,
+          "acciones": [
+            {
+              "tipo": "crece",
+              "en": "sol",
+              "a": 1.25,
+              "dur": 0.4
+            },
+            {
+              "tipo": "cara",
+              "cara": "risa",
+              "en": "calienta"
+            }
+          ]
+        },
+        {
+          "id": "g1",
+          "personaje": "gota",
+          "pos": [
+            0.25,
+            0.78
+          ],
+          "tam": 0.11,
+          "acciones": [
+            {
+              "tipo": "mover",
+              "a": [
+                0.3,
+                0.35
+              ],
+              "en": "vapor",
+              "dur": 1.8
+            },
+            {
+              "tipo": "cara",
+              "cara": "sorpresa",
+              "en": "vapor"
+            }
+          ],
+          "desaparece": "nubes+0.2"
+        },
+        {
+          "id": "g2",
+          "personaje": "gota",
+          "pos": [
+            0.45,
+            0.82
+          ],
+          "tam": 0.1,
+          "acciones": [
+            {
+              "tipo": "mover",
+              "a": [
+                0.42,
+                0.3
+              ],
+              "en": "vapor+0.3",
+              "dur": 1.8
+            },
+            {
+              "tipo": "cara",
+              "cara": "risa",
+              "en": "vapor"
+            }
+          ],
+          "desaparece": "nubes+0.2"
+        },
+        {
+          "id": "g3",
+          "personaje": "gota",
+          "pos": [
+            0.62,
+            0.8
+          ],
+          "tam": 0.1,
+          "acciones": [
+            {
+              "tipo": "mover",
+              "a": [
+                0.55,
+                0.36
+              ],
+              "en": "vapor+0.6",
+              "dur": 1.8
+            }
+          ],
+          "desaparece": "nubes+0.2"
+        },
+        {
+          "id": "nube",
+          "personaje": "nube",
+          "pos": [
+            0.43,
+            0.3
+          ],
+          "tam": 0.46,
+          "aparece": "nubes",
+          "entra": "pop",
+          "acciones": [
+            {
+              "tipo": "cara",
+              "cara": "miedo",
+              "en": "demasiado"
+            },
+            {
+              "tipo": "tiembla",
+              "en": "demasiado",
+              "dur": 0.8
+            },
+            {
+              "tipo": "cara",
+              "cara": "feliz",
+              "en": "vuelve"
+            }
+          ]
+        }
+      ],
+      "etiquetas": [
+        {
+          "texto": "VAPOR",
+          "pos": [
+            0.06,
+            0.1
+          ],
+          "color": "#2F8FD8",
+          "en": "vapor",
+          "hasta": "nubes"
+        }
+      ]
+    }
+  },
+  "mascota": {
+    "personaje": "presentadora",
+    "poses": [
+      {
+        "en": 0,
+        "pose": "senala_arriba",
+        "cara": "sorpresa"
+      },
+      {
+        "en": "frase 2",
+        "pose": "presenta",
+        "cara": "feliz"
+      },
+      {
+        "en": "frase 4",
+        "pose": "sorpresa",
+        "cara": "sorpresa"
+      },
+      {
+        "en": "frase 6",
+        "pose": "saluda",
+        "cara": "risa"
+      }
+    ]
+  },
+  "planos": [
+    {
+      "frase": 1,
+      "elementos": [
+        {
+          "tipo": "tarjeta",
+          "id": "ciclo",
+          "caja": "grande",
+          "entra": "pop",
+          "etiqueta": "El ciclo del agua",
+          "contenido": {
+            "mundo": "ciclo"
+          }
+        },
+        {
+          "tipo": "contador",
+          "en": "20",
+          "de": 0,
+          "a": 20,
+          "dur": 0.8,
+          "formato": "{n} s",
+          "etiqueta": "y lo entiendes",
+          "pos": [
+            715,
+            1260
+          ],
+          "tam": 110
+        }
+      ]
+    },
+    {
+      "frase": 2,
+      "elementos": [
+        {
+          "tipo": "tarjeta",
+          "id": "ciclo",
+          "caja": "arriba",
+          "etiqueta": "El ciclo del agua",
+          "contenido": {
+            "mundo": "ciclo"
+          }
+        },
+        {
+          "tipo": "pildoras",
+          "zona": [
+            420,
+            1100,
+            580,
+            420
+          ],
+          "items": [
+            {
+              "texto": "Sol",
+              "en": "sol"
+            },
+            {
+              "texto": "Agua del mar",
+              "en": "agua"
+            },
+            {
+              "texto": "Vapor",
+              "en": "vapor",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frase": 3,
+      "elementos": [
+        {
+          "tipo": "tarjeta",
+          "id": "ciclo",
+          "caja": "arriba",
+          "etiqueta": "Sube y se enfría",
+          "contenido": {
+            "mundo": "ciclo"
+          },
+          "pegatinas": [
+            {
+              "texto": "¡Nube!",
+              "en": "nubes",
+              "esquina": "arriba_der"
+            }
+          ]
+        },
+        {
+          "tipo": "nota",
+          "texto": "las gotas se juntan",
+          "en": "forma",
+          "pos": [
+            690,
+            1250
+          ],
+          "apunta": {
+            "tarjeta": "ciclo",
+            "actor": "nube"
+          },
+          "curva": -0.25
+        }
+      ]
+    },
+    {
+      "frase": 4,
+      "elementos": [
+        {
+          "tipo": "tarjeta",
+          "id": "ciclo",
+          "caja": "grande",
+          "etiqueta": "¡Llueve!",
+          "contenido": {
+            "mundo": "ciclo"
+          }
+        },
+        {
+          "tipo": "pildoras",
+          "zona": [
+            420,
+            1100,
+            580,
+            420
+          ],
+          "items": [
+            {
+              "texto": "Pesan demasiado",
+              "en": "pesan"
+            },
+            {
+              "texto": "¡Caen!",
+              "en": "caen",
+              "ok": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "frase": 5,
+      "elementos": [
+        {
+          "tipo": "tarjeta",
+          "id": "pasos",
+          "caja": "arriba",
+          "entra": "pop",
+          "etiqueta": "Y vuelta a empezar",
+          "contenido": {
+            "pasos": {
+              "items": [
+                {
+                  "texto": "Calor",
+                  "icono": "sol",
+                  "en": "agua"
+                },
+                {
+                  "texto": "Vapor",
+                  "icono": "gota",
+                  "en": "vuelve"
+                },
+                {
+                  "texto": "Nubes",
+                  "icono": "nube",
+                  "en": "mar"
+                },
+                {
+                  "texto": "Lluvia",
+                  "icono": "gota",
+                  "en": "empezar"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "tipo": "contador",
+          "en": "vuelve",
+          "de": 1,
+          "a": 4,
+          "dur": 0.9,
+          "formato": "{n} pasos",
+          "etiqueta": "y vuelta a empezar",
+          "pos": [
+            715,
+            1260
+          ],
+          "tam": 96
+        }
+      ]
+    },
+    {
+      "frase": 6,
+      "subtitulos": false,
+      "mascota": {
+        "x": 540,
+        "y": 1760,
+        "tam": 600
+      },
+      "elementos": [
+        {
+          "tipo": "cta",
+          "palabra": "LLUVIA",
+          "linea": "Te paso más ciencia así",
+          "pos": [
+            540,
+            560
+          ]
+        }
+      ]
+    }
+  ],
+  "portada": {
+    "etiqueta": "CIENCIA EN 20 S",
+    "lineas": [
+      "¿POR QUÉ",
+      "LLUEVE?"
+    ],
+    "clave": 1,
+    "remate": "te lo explico animado",
+    "mundo": "ciclo",
+    "segundo": 12.0,
+    "personaje": "presentadora",
+    "pose": "senala_arriba",
+    "cara": "sorpresa"
+  }
+}
